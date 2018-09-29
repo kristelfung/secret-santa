@@ -13,7 +13,17 @@ class SecretSanta extends Component {
 
     handleAddPersonParent = (name) => {
         this.setState((prevState) => {
-            return {people: prevState.people.concat(name)}
+            return {
+                people: prevState.people.concat(name)
+            }
+        })
+    }
+
+    handleDeletePerson = (name) => {        
+        this.setState((prevState) => {
+            return {
+                people: prevState.people.filter(item => item !== name)
+            }
         })
     }
 
@@ -22,7 +32,7 @@ class SecretSanta extends Component {
         <div>
             <h1>Parent Component</h1>
             <AddPerson handleAddPersonParent={this.handleAddPersonParent}/>
-            <People people={this.state.people}/>
+            <People people={this.state.people} handleDeletePerson={this.handleDeletePerson}/>
         </div>
         );
     }

@@ -6,7 +6,7 @@ const People = (props) => {
         <div>
             {
                 props.people.map((person) =>
-                    <Person person={person} key={person}/> // pass down name
+                    <Person person={person} key={person} handleDeletePerson={props.handleDeletePerson}/> // pass down name
                 )
             }
         </div>

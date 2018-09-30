@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Generate = () => {
+const Generate = (props) => {
     return (
         <div>
-            <button>Generate</button>
+            <button onClick={props.handleGenerate}>Generate</button>
         </div>
     )
 }

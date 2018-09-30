@@ -45,11 +45,22 @@ class SecretSanta extends Component {
         })
     }
 
+    handleGenerate = () => {
+        const newArray = this.state.people.slice(); // copy array
+        const shuffled = this.shuffleArray(newArray)
+
+        this.setState(() => {
+            return {
+                shuffled: shuffled
+            }
+        })
+    }
+
     render() {
         return (
         <div>
             <h1>Parent Component</h1>
-            <Generate/>
+            <Generate handleGenerate={this.handleGenerate}/>
             <AddPerson handleAddPersonParent={this.handleAddPersonParent}/>
             <People people={this.state.people} handleDeletePerson={this.handleDeletePerson}/>
         </div>

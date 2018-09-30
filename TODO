@@ -1,2 +1,1 @@
-- dont let users input blank names
-- dont allow name repeats
+- clear input after entering a user

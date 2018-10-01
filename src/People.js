@@ -4,11 +4,9 @@ import Person from './Person';
 const People = (props) => {
     return (
         <div>
-            {
-                props.people.map((person) =>
-                    <Person person={person} key={person} handleDeletePerson={props.handleDeletePerson}/> // pass down name
-                )
-            }
+            {props.people.map((person, index) =>
+                <Person person={person} santa={props.santas[index]} key={person} handleDeletePerson={props.handleDeletePerson}/> // pass down name
+            )}
         </div>
     )
 }

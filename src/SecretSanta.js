@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import People from './People';
 import AddPerson from './AddPerson';
 import Generate from './Generate';
+import './css/styles.css';
 
 class SecretSanta extends Component {
     constructor(props) {
@@ -9,7 +10,7 @@ class SecretSanta extends Component {
 
         this.state = {
             people: [],
-            shuffled: []
+            santas: []
         };
     }
 
@@ -25,7 +26,7 @@ class SecretSanta extends Component {
     }
 
     handleAddPersonParent = (name) => {
-        if (name !== "" && this.state.people.indexOf(name) == -1) { // if not blank AND not in array already
+        if (name !== "" && this.state.people.indexOf(name) === -1) { // if not blank AND not in array already
             this.setState((prevState) => {
                 return {
                     people: prevState.people.concat(name)
@@ -47,11 +48,11 @@ class SecretSanta extends Component {
 
     handleGenerate = () => {
         const newArray = this.state.people.slice(); // copy array
-        const shuffled = this.shuffleArray(newArray)
+        const santas = this.shuffleArray(newArray)
 
         this.setState(() => {
             return {
-                shuffled: shuffled
+                santas: santas
             }
         })
     }
@@ -62,7 +63,7 @@ class SecretSanta extends Component {
             <h1>Parent Component</h1>
             <Generate handleGenerate={this.handleGenerate}/>
             <AddPerson handleAddPersonParent={this.handleAddPersonParent}/>
-            <People people={this.state.people} handleDeletePerson={this.handleDeletePerson}/>
+            <People people={this.state.people} santas={this.state.santas} handleDeletePerson={this.handleDeletePerson}/>
         </div>
         );
     }

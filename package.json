@@ -1,13 +1,15 @@
 {
-  "name": "box-paradox",
-  "version": "0.1.0",
+  "name": "secret-santa",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "node-sass": "^4.9.3",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-scripts": "1.1.5"
   },
   "scripts": {
+    "sass" : "sass --watch src/scss:src/css",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

@@ -2,9 +2,7 @@ import React from 'react';
 
 const Generate = (props) => {
     return (
-        <div>
-            <button onClick={props.handleGenerate}>Generate</button>
-        </div>
+        <button className="generate-button" onClick={props.handleGenerate}>Generate</button>
     )
 }
 

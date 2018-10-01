@@ -1,0 +1,19 @@
+.generate-button {
+    text-decoration: none;
+    color: $white;
+    border: none;
+    padding: 20px;
+    width: 100%;
+    font-size: 1.4rem;
+    border-radius: 1rem;
+    background-image: $purple-gradient;
+    margin: 0.5rem 0rem;
+}
+
+.generate-button:focus {
+    outline: none;
+}
+
+.generate-button:hover, .generate-button:active {
+    background-image: $purple-darken;
+}

@@ -1,3 +1,4 @@
-body {
-    color: red;
-}
+@import '../scss/base/variables';
+@import '../scss/base/base';
+@import '../scss/components/generate';
+@import '../scss/components/header';

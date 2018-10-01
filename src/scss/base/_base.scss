@@ -1,0 +1,57 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 62.5%;
+    background-color: $offwhite;
+}
+
+h1, h2, h3, h4, h5, h6, p, a {
+    opacity: 0.9;
+    color: $black;
+    margin: 0.5rem 0rem;
+}
+
+h1, h2, h3, h5, h5, h6 {
+    font-weight: 700;
+}
+
+.subtitle {
+    opacity: 0.8;
+}
+
+h1 {
+    font-size: 2.4rem;
+}
+
+h2 {
+    font-size: 2.0rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h4 {
+    font-size: 1.6rem;
+}
+
+h5 {
+    font-size: 1.4rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.container {
+    max-width: 40rem;
+    margin: 0 auto;
+}

@@ -59,8 +59,11 @@ class SecretSanta extends Component {
 
     render() {
         return (
-        <div>
-            <h1>Parent Component</h1>
+        <div className="container">
+            <div className="header">
+                <h1>Secret Santa Generator</h1>
+                <p className="subtitle">Without email or sign up!</p>
+            </div>
             <Generate handleGenerate={this.handleGenerate}/>
             <AddPerson handleAddPersonParent={this.handleAddPersonParent}/>
             <People people={this.state.people} santas={this.state.santas} handleDeletePerson={this.handleDeletePerson}/>

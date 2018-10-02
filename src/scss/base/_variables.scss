@@ -1,6 +1,7 @@
 $white: #fefefe;
-$offwhite: #f1f1fb;
+$offwhite: #f9f9fa;
 $black: #111111;
+$grey: #efefef;
 
-$purple-gradient: linear-gradient(-225deg, #8c19de 0%, #7918F2 48%, #570ddb 100%);
-$purple-darken: linear-gradient(-225deg, darken(#8c19de, 5%) 0%, darken(#7918F2, 5%) 48%, darken(#570ddb, 5%) 100%);
+$purple-gradient: linear-gradient(45deg,#852d91, #942ff9);
+$purple-darken: linear-gradient(45deg, darken(#852d91, 5%), darken(#942ff9, 5%));

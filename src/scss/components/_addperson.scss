@@ -1,0 +1,15 @@
+.add {
+    text-decoration: none;
+    color: $white;
+    border: none;
+    padding: 20px;
+    width: 15%;
+    font-size: 1.4rem;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    background-color: $grey;
+}
+
+.add:focus {
+    outline: none;
+}

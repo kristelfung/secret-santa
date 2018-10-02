@@ -10,10 +10,10 @@ class AddPerson extends Component {
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleAddPersonChild} id="name-form">
-                    <input defaultValue="" type="text" name="name"/>
-                    <button type="submit">Add</button>
+            <div className="form-wrap">
+                <form onSubmit={this.handleAddPersonChild} id="name-form" className="form">
+                    <input type="text" name="name"/>
+                    <button type="submit" className="add">Add</button>
                 </form> 
             </div>
         )

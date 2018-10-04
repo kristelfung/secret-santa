@@ -2,6 +2,7 @@ body {
     font-family: 'Lato', sans-serif;
     font-size: 62.5%;
     background-color: $offwhite;
+    color: $black;
 }
 
 h1, h2, h3, h4, h5, h6, p, a {
@@ -52,6 +53,7 @@ button {
     text-decoration: none;
     color: $white;
     border: none;
+    text-transform: uppercase;
 }
 
 button:focus {
@@ -59,6 +61,8 @@ button:focus {
 }
 
 .container {
-    max-width: 26rem;
+    max-width: 24rem;
     margin: 0 auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }

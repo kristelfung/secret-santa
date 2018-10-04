@@ -1,7 +1,10 @@
 $white: #fefefe;
 $offwhite: #f0f3f7;
-$black: #111111;
+$black: #000000;
 $grey: #efefef;
 
 $green-gradient: linear-gradient(45deg,#5ed161, #17a921);
 $green-gradient-darken: linear-gradient(45deg, darken(#5ed161, 5%), darken(#17a921, 5%));
+
+$red-gradient: linear-gradient(45deg, #fb7f3b, #d4145a);
+$red-gradient-darken: linear-gradient(45deg, darken(#fb7f3b, 5%), darken(#d4145a, 5%));

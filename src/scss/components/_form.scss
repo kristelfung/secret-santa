@@ -1,0 +1,16 @@
+.form-wrap {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.add {
+    padding: 20px;
+    font-size: 0.9rem;
+    border-top-right-radius: 0.8rem;
+    border-bottom-right-radius: 0.8rem;
+    background-image: $red-gradient;
+}
+
+.add:focus {
+    outline: none;
+}

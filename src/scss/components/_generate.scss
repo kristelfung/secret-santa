@@ -1,10 +1,11 @@
 .generate-button {
     padding: 20px;
     width: 100%;
-    font-size: 1rem;
-    border-radius: 1rem;
+    font-size: 0.9rem;
+    border-radius: 0.8rem;
     background-image: $green-gradient;
-    margin: 0.5rem 0rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .generate-button:hover, .generate-button:active {

@@ -62,7 +62,7 @@ class SecretSanta extends Component {
         <div className="container">
             <div className="header">
                 <h1>Secret Santa Generator</h1>
-                <p className="subtitle">Without email or sign up!</p>
+                <p className="subtitle">No email or sign up!</p>
             </div>
             <Generate handleGenerate={this.handleGenerate}/>
             <AddPerson handleAddPersonParent={this.handleAddPersonParent}/>

@@ -1,12 +1,27 @@
 .person {
     padding: 1rem 2rem;
     display: flex;
+    align-items: center;
+}
+
+.person__number {
+    border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
+    padding: 0.2rem;
+    background: $black;
+    line-height: 1rem;
+    text-align: center;
+    color: $white;
+    font-size: 0.8rem;
+    margin-right: 0.7rem;
 }
 
 .person__remove {
     color: $red;
     background: none;
     flex-grow: 1;
+    padding: 0;
 }
 
 .person__remove:hover {
@@ -15,6 +30,7 @@
 
 .person__name {
     flex-grow: 10;
+    word-break: break-all;
 }
 
 .person__link {

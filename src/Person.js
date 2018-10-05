@@ -2,13 +2,15 @@ import React from 'react';
 
 const Person = (props) => {
     return (
-        <div>
-            {props.number}
-            {props.person}
-            <p>{props.santa}</p>
-            <button onClick={(e) => {props.handleDeletePerson(props.person)}}>
-                Remove
-            </button>
+        <div className="person">
+            <p>{props.number} {props.person}</p>
+            {
+                (props.renderRemove == true)
+                ? <button className="remove" onClick={(e) => {props.handleDeletePerson(props.person)}}>
+                    Remove
+                </button>
+                : <p>{props.santa}</p>
+            }
         </div>
     )
 }

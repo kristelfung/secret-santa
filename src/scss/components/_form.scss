@@ -25,6 +25,10 @@
     flex-grow: 1;
 }
 
+.add:hover, .add:focus {
+    background-image: $red-gradient-darken;
+}
+
 .add:focus {
     outline: none;
 }

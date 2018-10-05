@@ -1,6 +1,11 @@
 .people-container {
     border-radius: 0.8rem;
     background-color: $white;
-    padding: 1rem 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.05);
+}
+
+.empty-message {
+    padding: 1.5rem 2rem;
 }

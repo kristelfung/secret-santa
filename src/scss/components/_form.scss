@@ -23,6 +23,7 @@
     border-bottom-right-radius: 0.8rem;
     background-image: $red-gradient;
     flex-grow: 1;
+    width: 8rem;
 }
 
 .add:hover, .add:focus {
@@ -31,4 +32,9 @@
 
 .add:focus {
     outline: none;
+}
+
+.add-icon {
+    height: 0.7rem;
+    margin-right: 0.2rem;
 }

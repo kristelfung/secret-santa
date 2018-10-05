@@ -1,8 +1,22 @@
-.remove {
-    color: $red;
-    background: none;
-}
-
 .person {
     padding: 1rem 2rem;
+    display: flex;
+}
+
+.person__remove {
+    color: $red;
+    background: none;
+    flex-grow: 1;
+}
+
+.person__remove:hover {
+    color: darken($red, 10%);
+}
+
+.person__name {
+    flex-grow: 10;
+}
+
+.person__link {
+    flex-grow: 1;
 }

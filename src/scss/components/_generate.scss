@@ -11,3 +11,11 @@
 .generate-button:hover, .generate-button:active {
     background-image: $green-gradient-darken;
 }
+
+.santa-icon {
+    height: 1rem;
+    margin-bottom: -0.1rem;
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+    display: inline-block;
+}

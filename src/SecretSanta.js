@@ -29,7 +29,8 @@ class SecretSanta extends Component {
         if (name !== "" && this.state.people.indexOf(name) === -1) { // if not blank AND not in array already
             this.setState((prevState) => {
                 return {
-                    people: prevState.people.concat(name)
+                    people: prevState.people.concat(name),
+                    santas: []
                 }
             })
         }

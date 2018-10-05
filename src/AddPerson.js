@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import plus from './images/plus.svg';
 
 class AddPerson extends Component {
     handleAddPersonChild = (e) => {
@@ -13,7 +14,10 @@ class AddPerson extends Component {
             <div className="form-wrap">
                 <form onSubmit={this.handleAddPersonChild} id="name-form" className="form">
                     <input type="text" name="name" className="input" placeholder="Enter a name..."/>
-                    <button type="submit" className="add">Add</button>
+                    <button type="submit" className="add">
+                        <img src={plus} className="add-icon"/>
+                        Add
+                    </button>
                 </form> 
             </div>
         )

@@ -3,13 +3,13 @@ import React from 'react';
 const Person = (props) => {
     return (
         <div className="person">
-            <p>{props.number} {props.person}</p>
+            <p className="person__name">{props.number} {props.person}</p>
             {
                 (props.renderRemove == true)
-                ? <button className="remove" onClick={(e) => {props.handleDeletePerson(props.person)}}>
+                ? <button className="person__remove" onClick={(e) => {props.handleDeletePerson(props.person)}}>
                     Remove
                 </button>
-                : <p>{props.santa}</p>
+                : <p className="person__link">{props.santa}</p>
             }
         </div>
     )

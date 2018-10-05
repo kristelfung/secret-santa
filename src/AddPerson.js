@@ -12,7 +12,7 @@ class AddPerson extends Component {
         return (
             <div className="form-wrap">
                 <form onSubmit={this.handleAddPersonChild} id="name-form" className="form">
-                    <input type="text" name="name" className="input"/>
+                    <input type="text" name="name" className="input" placeholder="Enter a name..."/>
                     <button type="submit" className="add">Add</button>
                 </form> 
             </div>

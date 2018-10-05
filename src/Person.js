@@ -1,5 +1,4 @@
 import React from 'react';
-import Santa from './Santa'
 
 const Person = (props) => {
     return (

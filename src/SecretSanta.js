@@ -15,7 +15,22 @@ class SecretSanta extends Component {
         };
     }
 
-    shuffleArray(array) {
+    transformToArray(prmstr) {
+        var params = {};
+        var prmarr = prmstr.split("&");
+        for ( var i = 0; i < prmarr.length; i++) {
+            var tmparr = prmarr[i].split("=");
+            params[tmparr[0]] = tmparr[1];
+        }
+        return params;
+    }
+
+    getSearchParameters() {
+        let prmstr = window.location.search.substr(1);
+        return prmstr !== null && prmstr !== "" ? this.transformToArray(prmstr) : {};
+    }
+
+    shuffleArray(array) { // Sattolo's algorithm
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * i);
             const temp = array[i];
@@ -36,7 +51,7 @@ class SecretSanta extends Component {
             })
         }
         else {
-            alert("error!")
+            alert("error!") // later change this
         }
     }
 
@@ -50,20 +65,22 @@ class SecretSanta extends Component {
 
     handleGenerate = () => {
         const newArray = this.state.people.slice(); // copy array
-        const santas = this.shuffleArray(newArray)
+        const santas = this.shuffleArray(newArray);
 
         this.setState(() => {
             return {
                 santas: santas
             }
         })
+
+        console.log(this.getSearchParameters());
     }
 
     render() {
         return (
         <div className="container">
             <div className="header">
-                <img src={image} class="header__image"/>
+                <img src={image} className="header__image" alt="santa-image"/>
                 <h1>Secret Santa Generator</h1>
                 <p className="subtitle">No email or signup!</p>
             </div>

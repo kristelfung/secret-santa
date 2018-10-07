@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import Person from './Person';
 
 class People extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     renderRemove = () => {
         if (this.props.santas.length > 0) {
             return false

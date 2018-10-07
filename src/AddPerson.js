@@ -12,10 +12,10 @@ class AddPerson extends Component {
     render() {
         return (
             <div className="form-wrap">
-                <form onSubmit={this.handleAddPersonChild} id="name-form" className="form">
+                <form autoComplete="off" onSubmit={this.handleAddPersonChild} id="name-form" className="form">
                     <input type="text" name="name" className="input" placeholder="Enter a name..."/>
                     <button type="submit" className="add">
-                        <img src={plus} className="add-icon"/>
+                        <img src={plus} className="add-icon" alt="plus-icon"/>
                         Add
                     </button>
                 </form> 

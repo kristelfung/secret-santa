@@ -10,7 +10,7 @@ const Person = (props) => {
                 {props.person}
             </p>
             {
-                (props.renderRemove == true)
+                (props.renderRemove === true)
                 ? <button className="person__remove" onClick={(e) => {props.handleDeletePerson(props.person)}}>
                     Remove
                 </button>

@@ -1,0 +1,17 @@
+.note {
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+.note__title, .note__santa {
+    text-transform: capitalize;
+}
+
+.note__santa {
+    color: $red;
+}
+
+.note__image {
+    margin: 1rem;
+    width: 4rem;
+}

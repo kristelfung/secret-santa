@@ -3,6 +3,7 @@ import People from './People';
 import AddPerson from './AddPerson';
 import Generate from './Generate';
 import Header from './Header';
+import Note from './Note';
 import './css/styles.css';
 
 class SecretSanta extends Component {
@@ -42,17 +43,42 @@ class SecretSanta extends Component {
         return array;
     }
 
+    stringToArray(str) {
+        let stringToArray = [...Array(str.length)]
+        const toNum = {
+            a: 1, b: 2, c: 3, d: 4, e: 5, f: 6, g: 7, h: 8, i: 9, j: 10, k: 11, 
+            l: 12, m: 13, n: 14,o: 15, p: 16, q: 17, r: 18, s: 19, t: 20, 
+            u: 21, v: 22, w: 23, x: 24, y: 25, z: 26
+        }
+        for (let i = 0; i < str.length; i++) {
+            const letter = "" + str.charAt(i)
+            stringToArray[i] = toNum[letter]
+        }
+        return stringToArray
+    }
+
+    // cipher(santa, reverse = false) {
+    //     const shiftKey = process.env.REACT_APP_SHIFT_KEY;
+
+    //     for (let i = 0; i < santa.length; i++) {
+    //         const rotation = shiftKey[i % shiftKey.length]
+    //     }
+    // }
+
     handleAddPersonParent = (name) => {
-        if (name !== "" && this.state.people.indexOf(name) === -1) { // if not blank AND not in array already
+        if (name === "") {
+            alert("Please enter a name!");
+        }
+        else if (this.state.people.indexOf(name) !== -1) { // -1 means in array
+            alert("You've already added this person!")
+        }
+        else { // if not blank AND not in array already
             this.setState((prevState) => {
                 return {
                     people: prevState.people.concat(name),
                     santas: []
                 }
             })
-        }
-        else {
-            alert("error!") // later change this
         }
     }
 
@@ -80,7 +106,7 @@ class SecretSanta extends Component {
             return (
                 <div className="container">
                     <Header/>
-                    <h1>Hi {this.state.params.name}</h1>
+                    <Note name={this.state.params.name} mykey={this.state.params.key}/>
                 </div>
             )
         }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import People from './People';
 import AddPerson from './AddPerson';
 import Generate from './Generate';
-import image from './images/santa.svg';
+import Header from './Header';
 import './css/styles.css';
 
 class SecretSanta extends Component {
@@ -11,15 +11,16 @@ class SecretSanta extends Component {
 
         this.state = {
             people: [],
-            santas: []
+            santas: [],
+            params: this.getSearchParameters()
         };
     }
 
     transformToArray(prmstr) {
-        var params = {};
-        var prmarr = prmstr.split("&");
-        for ( var i = 0; i < prmarr.length; i++) {
-            var tmparr = prmarr[i].split("=");
+        let params = {};
+        let prmarr = prmstr.split("&");
+        for ( let i = 0; i < prmarr.length; i++) {
+            let tmparr = prmarr[i].split("=");
             params[tmparr[0]] = tmparr[1];
         }
         return params;
@@ -72,18 +73,21 @@ class SecretSanta extends Component {
                 santas: santas
             }
         })
-
-        console.log(this.getSearchParameters());
     }
 
     render() {
+        if (this.state.params.name !== undefined) {
+            return (
+                <div className="container">
+                    <Header/>
+                    <h1>Hi {this.state.params.name}</h1>
+                </div>
+            )
+        }
+
         return (
         <div className="container">
-            <div className="header">
-                <img src={image} className="header__image" alt="santa-image"/>
-                <h1>Secret Santa Generator</h1>
-                <p className="subtitle">No email or signup!</p>
-            </div>
+            <Header/>
             <Generate handleGenerate={this.handleGenerate}/>
             <AddPerson handleAddPersonParent={this.handleAddPersonParent}/>
             <People people={this.state.people} santas={this.state.santas} handleDeletePerson={this.handleDeletePerson}/>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import People from './People';
 import AddPerson from './AddPerson';
 import Generate from './Generate';
+import image from './images/santa.svg';
 import './css/styles.css';
 
 class SecretSanta extends Component {
@@ -62,6 +63,7 @@ class SecretSanta extends Component {
         return (
         <div className="container">
             <div className="header">
+                <img src={image} class="header__image"/>
                 <h1>Secret Santa Generator</h1>
                 <p className="subtitle">No email or signup!</p>
             </div>

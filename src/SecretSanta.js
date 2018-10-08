@@ -4,6 +4,7 @@ import AddPerson from './AddPerson';
 import Generate from './Generate';
 import Header from './Header';
 import Note from './Note';
+import sha256 from 'crypto-js/sha256';
 import './css/styles.css';
 
 class SecretSanta extends Component {
@@ -42,26 +43,6 @@ class SecretSanta extends Component {
 
         return array;
     }
-
-    cipher(text, reverse) {
-        // Surrogate pair limit
-        const bound = 0x10000;
-        let key = process.env.REACT_APP_SHIFT_KEY
-        // Create string from character codes
-        return String.fromCharCode.apply(null,
-            // Turn string to character codes
-            text.split('').map(function(v, i) {
-                // Get rotation from key
-                let rotation = key[i % key.length].charCodeAt();
-
-                // Are we decrypting?
-                if(reverse) rotation = -rotation;
-
-                // Return current character code + rotation
-                return (v.charCodeAt() + rotation + bound) % bound;
-            })
-        );
-    };
 
     handleAddPersonParent = (name) => {
         if (name === "") {

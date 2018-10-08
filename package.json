@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "crypto-js": "^3.1.9-1",
     "node-sass": "^4.9.3",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-scripts": "1.1.5"
   },
   "scripts": {
-    "sass" : "sass --watch src/scss:src/css",
+    "sass": "sass --watch src/scss:src/css",
     "sass:build": "sass — update src/styles/scss:src/styles/css",
     "start": "react-scripts start",
     "build": "yarn sass:build && react-scripts build",

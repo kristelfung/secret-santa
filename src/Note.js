@@ -7,7 +7,7 @@ const Note = (props) => {
             <div className="note">
                 <h5 className="note__title">Hi {props.name},</h5>
                 <h5>you've been assigned <span className="note__santa">{props.mykey}</span>.</h5>
-                <img src={present} className="note__image"/>
+                <img src={present} className="note__image" alt="present"/>
                 <h5>Good luck!</h5>
             </div>
         </div>

@@ -43,27 +43,25 @@ class SecretSanta extends Component {
         return array;
     }
 
-    stringToArray(str) {
-        let stringToArray = [...Array(str.length)]
-        const toNum = {
-            a: 1, b: 2, c: 3, d: 4, e: 5, f: 6, g: 7, h: 8, i: 9, j: 10, k: 11, 
-            l: 12, m: 13, n: 14,o: 15, p: 16, q: 17, r: 18, s: 19, t: 20, 
-            u: 21, v: 22, w: 23, x: 24, y: 25, z: 26
-        }
-        for (let i = 0; i < str.length; i++) {
-            const letter = "" + str.charAt(i)
-            stringToArray[i] = toNum[letter]
-        }
-        return stringToArray
-    }
+    cipher(text, reverse) {
+        // Surrogate pair limit
+        const bound = 0x10000;
+        let key = process.env.REACT_APP_SHIFT_KEY
+        // Create string from character codes
+        return String.fromCharCode.apply(null,
+            // Turn string to character codes
+            text.split('').map(function(v, i) {
+                // Get rotation from key
+                let rotation = key[i % key.length].charCodeAt();
 
-    // cipher(santa, reverse = false) {
-    //     const shiftKey = process.env.REACT_APP_SHIFT_KEY;
+                // Are we decrypting?
+                if(reverse) rotation = -rotation;
 
-    //     for (let i = 0; i < santa.length; i++) {
-    //         const rotation = shiftKey[i % shiftKey.length]
-    //     }
-    // }
+                // Return current character code + rotation
+                return (v.charCodeAt() + rotation + bound) % bound;
+            })
+        );
+    };
 
     handleAddPersonParent = (name) => {
         if (name === "") {
@@ -99,6 +97,7 @@ class SecretSanta extends Component {
                 santas: santas
             }
         })
+        alert(this.cipher("hello", false))
     }
 
     render() {

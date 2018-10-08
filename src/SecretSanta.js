@@ -4,7 +4,6 @@ import AddPerson from './AddPerson';
 import Generate from './Generate';
 import Header from './Header';
 import Note from './Note';
-import sha256 from 'crypto-js/sha256';
 import './css/styles.css';
 
 class SecretSanta extends Component {
@@ -40,7 +39,6 @@ class SecretSanta extends Component {
             array[i] = array[j];
             array[j] = temp;
         }
-
         return array;
     }
 
@@ -78,7 +76,6 @@ class SecretSanta extends Component {
                 santas: santas
             }
         })
-        alert(this.cipher("hello", false))
     }
 
     render() {

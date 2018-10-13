@@ -14,7 +14,7 @@ const Person = (props) => {
                 ? <button className="person__remove" onClick={(e) => {props.handleDeletePerson(props.person)}}>
                     Remove
                 </button>
-                : <p className="person__link">{props.santa}</p>
+                : <a href={ "/?name=" + props.person + "&key=" + props.encryptString(props.santa)} onClick="" className="person__link">Copy link</a>
             }
         </div>
     )

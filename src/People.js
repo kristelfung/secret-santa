@@ -24,6 +24,8 @@ class People extends Component {
                             number={index + 1} 
                             handleDeletePerson={this.props.handleDeletePerson}
                             renderRemove={this.renderRemove()}
+                            encryptString={this.props.encryptString}
+                            decryptHash={this.props.decryptHash}
                         /> // pass down name
                     )
                     : <p className="empty-message">Add a person to get started!</p>

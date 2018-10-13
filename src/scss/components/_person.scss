@@ -22,6 +22,8 @@
     background: none;
     flex-grow: 1;
     padding: 0;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .person__remove:hover {
@@ -35,4 +37,6 @@
 
 .person__link {
     flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
 }

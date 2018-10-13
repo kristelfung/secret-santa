@@ -19,6 +19,17 @@ class SecretSanta extends Component {
         };
     }
 
+    encryptString(string) {
+        const key = process.env.REACT_APP_ENCRYPT_KEY
+        return aes.encrypt(string, key)
+    }
+
+    decryptHash(hash) {
+        const key = process.env.REACT_APP_ENCRYPT_KEY
+        const plaintext = aes.decrypt(hash.toString(), key)
+        return plaintext.toString(cryptojs.enc.Utf8)
+    }
+
     transformToArray(prmstr) {
         let params = {};
         let prmarr = prmstr.split("&");
@@ -78,14 +89,6 @@ class SecretSanta extends Component {
                 santas: santas
             }
         })
-
-        const message = "hello"
-        const key = "b2t4a2cd0495ij7r"
-        const cfg = {}
-        const encrypted = aes.encrypt(message, key, cfg)
-        alert(encrypted)
-        const decrypted = aes.decrypt(encrypted.toString(), key, cfg)
-        alert(decrypted.toString(cryptojs.enc.Utf8))
     }
 
     render() {
@@ -93,7 +96,7 @@ class SecretSanta extends Component {
             return (
                 <div className="container">
                     <Header/>
-                    <Note name={this.state.params.name} mykey={this.state.params.key}/>
+                    <Note name={this.state.params.name} mykey={this.state.params.key} decryptHash={this.decryptHash}/>
                 </div>
             )
         }
@@ -103,7 +106,7 @@ class SecretSanta extends Component {
             <Header/>
             <Generate handleGenerate={this.handleGenerate}/>
             <AddPerson handleAddPersonParent={this.handleAddPersonParent}/>
-            <People people={this.state.people} santas={this.state.santas} handleDeletePerson={this.handleDeletePerson}/>
+            <People people={this.state.people} santas={this.state.santas} handleDeletePerson={this.handleDeletePerson} encryptString={this.encryptString}/>
         </div>
         );
     }

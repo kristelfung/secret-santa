@@ -15,6 +15,7 @@ class SecretSanta extends Component {
         this.state = {
             people: [],
             santas: [],
+            copied: false,
             params: this.getSearchParameters()
         };
     }
@@ -106,7 +107,7 @@ class SecretSanta extends Component {
             <Header/>
             <Generate handleGenerate={this.handleGenerate}/>
             <AddPerson handleAddPersonParent={this.handleAddPersonParent}/>
-            <People people={this.state.people} santas={this.state.santas} handleDeletePerson={this.handleDeletePerson} encryptString={this.encryptString}/>
+            <People people={this.state.people} santas={this.state.santas} handleDeletePerson={this.handleDeletePerson} encryptString={this.encryptString} />
         </div>
         );
     }

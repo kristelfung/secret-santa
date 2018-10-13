@@ -9,7 +9,7 @@ Clone or download the repository onto your local machine. Navigate to the direct
 yarn install
 ```
 
-Note: you will have to create a key for crypto-js in a .env.local file. The key needs to be a string of 16 digits. 
+Note: you will have to create a key for crypto-js in a environment file, such as an `.env.local` file. The key needs to be 16 digits of strings or numbers.
 
 ## Running the App
 First, compile SASS.

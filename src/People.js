@@ -11,8 +11,7 @@ class People extends Component {
         }
     }
 
-
-    render() {        
+    render() {
         return (
             <div className="people-container">
                 {
@@ -25,7 +24,7 @@ class People extends Component {
                             handleDeletePerson={this.props.handleDeletePerson}
                             renderRemove={this.renderRemove()}
                             encryptString={this.props.encryptString}
-                            decryptHash={this.props.decryptHash}
+                            copyText={this.props.copyText}
                         /> // pass down name
                     )
                     : <p className="empty-message">Add a person to get started!</p>

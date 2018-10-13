@@ -4,6 +4,8 @@ import AddPerson from './AddPerson';
 import Generate from './Generate';
 import Header from './Header';
 import Note from './Note';
+import aes from 'crypto-js/aes';
+import cryptojs from 'crypto-js';
 import './css/styles.css';
 
 class SecretSanta extends Component {
@@ -76,6 +78,14 @@ class SecretSanta extends Component {
                 santas: santas
             }
         })
+
+        const message = "hello"
+        const key = "b2t4a2cd0495ij7r"
+        const cfg = {}
+        const encrypted = aes.encrypt(message, key, cfg)
+        alert(encrypted)
+        const decrypted = aes.decrypt(encrypted.toString(), key, cfg)
+        alert(decrypted.toString(cryptojs.enc.Utf8))
     }
 
     render() {

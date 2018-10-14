@@ -31,6 +31,11 @@ class SecretSanta extends Component {
         return plaintext.toString(cryptojs.enc.Utf8)
     }
 
+    // componentDidMount() {
+    //     alert(this.encryptString("Hello"))
+    //     alert(this.decryptHash("U2FsdGVkX1+g5B4VlIFKJYipn3g8Pvg+b3oX01DHG+U="))
+    // }
+
     transformToArray(prmstr) {
         let params = {};
         let prmarr = prmstr.split("&");

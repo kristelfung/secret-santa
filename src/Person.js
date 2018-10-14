@@ -3,7 +3,6 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 class Person extends Component {
     state = {
-        value: window.location.origin.toString() + "/?name=" + this.props.person + "&key=" + this.props.encryptString(this.props.santa),
         copied: false,
         copytext: "Copy link"
     }
@@ -33,7 +32,7 @@ class Person extends Component {
                     ? <button className="person__remove" onClick={(e) => {this.props.handleDeletePerson(this.props.person)}}>
                         Remove
                     </button>
-                    : <CopyToClipboard text={this.state.value}
+                    : <CopyToClipboard text={window.location.origin.toString() + "/?name=" + this.props.person + "&key=" + this.props.encryptString(this.props.santa)}
                         onCopy={() => this.setState({copied: true})}>
                         <button className="person__link" onClick={this.showCopied}>
                             {this.state.copytext}

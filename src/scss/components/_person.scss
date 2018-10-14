@@ -36,7 +36,12 @@
 }
 
 .person__link {
+    color: $blue;
     flex-grow: 1;
     display: flex;
     justify-content: flex-end;
+}
+
+.person__link:hover {
+    color: darken($blue, 10%);
 }

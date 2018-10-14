@@ -2,6 +2,23 @@ import React, { Component } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 class Person extends Component {
+    state = {
+        value: window.location.origin.toString() + "/?name=" + this.props.person + "&key=" + this.props.encryptString(this.props.santa),
+        copied: false,
+        copytext: "Copy link"
+    }
+
+    showCopied = () => {
+        this.setState({
+            copytext: "Copied"
+        })
+        setTimeout(() => {
+            this.setState({
+                copytext: "Copy link"
+            })
+        }, 1000)
+    }
+
     render() {
         return (
             <div className="person">
@@ -16,7 +33,12 @@ class Person extends Component {
                     ? <button className="person__remove" onClick={(e) => {this.props.handleDeletePerson(this.props.person)}}>
                         Remove
                     </button>
-                    : <a href={ "/?name=" + this.props.person + "&key=" + this.props.encryptString(this.props.santa)} className="person__link">Copy link</a>
+                    : <CopyToClipboard text={this.state.value}
+                        onCopy={() => this.setState({copied: true})}>
+                        <button className="person__link" onClick={this.showCopied}>
+                            {this.state.copytext}
+                        </button>
+                    </CopyToClipboard>
                 }
             </div>
         )

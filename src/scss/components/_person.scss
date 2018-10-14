@@ -6,7 +6,7 @@
 
 .person__number {
     border-radius: 50%;
-    width: 1rem;
+    min-width: 1rem;
     height: 1rem;
     padding: 0.2rem;
     background: $black;
@@ -24,6 +24,7 @@
     padding: 0;
     display: flex;
     justify-content: flex-end;
+    margin-left: 0.7rem;
 }
 
 .person__remove:hover {

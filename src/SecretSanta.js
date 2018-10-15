@@ -62,6 +62,8 @@ class SecretSanta extends Component {
     }
 
     handleAddPersonParent = (name) => {
+        name = name.toLowerCase();
+        console.log(name)
         if (name === "") {
             alert("Please enter a name!");
         }

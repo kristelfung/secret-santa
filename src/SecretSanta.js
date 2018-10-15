@@ -6,7 +6,7 @@ import Header from './Header';
 import Note from './Note';
 import aes from 'crypto-js/aes';
 import cryptojs from 'crypto-js';
-import './css/styles.css';
+import './scss/styles.scss';
 
 class SecretSanta extends Component {
     constructor(props) {

@@ -1,21 +1,25 @@
 {
   "name": "secret-santa",
   "version": "1.0.0",
-  "private": true,
+  "license": "MIT",
   "dependencies": {
     "crypto-js": "^3.1.9-1",
     "node-sass": "^4.9.3",
     "react": "^16.5.2",
     "react-copy-to-clipboard": "^5.0.1",
     "react-dom": "^16.5.2",
-    "react-scripts": "1.1.5"
+    "react-scripts": "2.0.4"
   },
   "scripts": {
-    "sass": "sass --watch src/scss:src/css",
-    "sass:build": "sass — update src/styles/scss:src/styles/css",
     "start": "react-scripts start",
-    "build": "yarn sass:build && react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

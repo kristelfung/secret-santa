@@ -3,6 +3,17 @@ body {
     font-size: 62.5%;
     background-color: $offwhite;
     color: $black;
+    margin: 0;
+}
+
+.body-wrap {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.wrap {
+    flex: 1;
 }
 
 h1, h2, h3, h4, h5, h6, p, a {

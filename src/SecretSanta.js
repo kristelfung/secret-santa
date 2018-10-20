@@ -4,6 +4,7 @@ import AddPerson from './AddPerson';
 import Generate from './Generate';
 import Header from './Header';
 import Note from './Note';
+import Footer from './Footer';
 import aes from 'crypto-js/aes';
 import cryptojs from 'crypto-js';
 import './scss/styles.scss';
@@ -110,11 +111,20 @@ class SecretSanta extends Component {
         }
 
         return (
-        <div className="container">
-            <Header/>
-            <Generate handleGenerate={this.handleGenerate}/>
-            <AddPerson handleAddPersonParent={this.handleAddPersonParent}/>
-            <People people={this.state.people} santas={this.state.santas} handleDeletePerson={this.handleDeletePerson} encryptString={this.encryptString} />
+        <div className="body-wrap">
+            <div className="container wrap">
+                <Header/>
+                <Generate handleGenerate={this.handleGenerate}/>
+                <AddPerson handleAddPersonParent={this.handleAddPersonParent}/>
+                <People people={this.state.people} 
+                    santas={this.state.santas} 
+                    handleDeletePerson={this.handleDeletePerson} 
+                    encryptString={this.encryptString} 
+                />
+            </div> 
+            <div className="container">
+                <Footer/>
+            </div>
         </div>
         );
     }

@@ -17,6 +17,7 @@ class SecretSanta extends Component {
             people: [],
             santas: [],
             copied: false,
+            hidden: true,
             params: this.getSearchParameters()
         };
     }
@@ -74,6 +75,7 @@ class SecretSanta extends Component {
         else { // if not blank AND not in array already
             this.setState((prevState) => {
                 return {
+                    hidden: true,
                     people: prevState.people.concat(name),
                     santas: []
                 }
@@ -92,15 +94,26 @@ class SecretSanta extends Component {
     handleGenerate = () => {
         const newArray = this.state.people.slice(); // copy array
         const santas = this.shuffleArray(newArray);
-
-        this.setState(() => {
-            return {
-                santas: santas
-            }
-        })
+        if (this.state.people.length <= 2) {
+            this.setState ({
+              hidden: false
+            })
+        }
+        else {
+            this.setState(() => {
+                return {
+                    santas: santas
+                }
+            })
+        }
     }
 
     render() {
+        let generateErrorMessage;
+        generateErrorMessage = (
+          <p style={{color: "#d53743", fontSize: ".75rem", textAlign: "center", marginTop: "-.75rem"}}>You need at least 3 people to generate Secret Santas!</p>
+        )
+
         if (this.state.params.name !== undefined) {
             return (
                 <div className="container">
@@ -115,6 +128,9 @@ class SecretSanta extends Component {
             <div className="container wrap">
                 <Header/>
                 <Generate handleGenerate={this.handleGenerate}/>
+                {!this.state.hidden ?
+                  generateErrorMessage
+                : null}
                 <AddPerson handleAddPersonParent={this.handleAddPersonParent}/>
                 <People people={this.state.people} 
                     santas={this.state.santas} 

@@ -97,20 +97,18 @@ class SecretSanta extends Component {
     }
 
     handleGenerate = () => {
-    const newArray = this.state.people.slice(); // copy array
-    const santas = this.shuffleArray(newArray);
-    if (this.state.people.length <= 2) {
+      if (this.state.people.length <= 2) {
         this.setState({
-            hidden: false
+          hidden: false
         })
-    }
-    else {
+      }
+        const newArray = this.state.people.slice(); // copy array
+        const santas = this.shuffleArray(newArray);
         this.setState(() => {
             return {
                 santas: santas
             }
         })
-    }
     }
 
     updateName = (event) => {

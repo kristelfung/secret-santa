@@ -17,6 +17,8 @@ class SecretSanta extends Component {
             people: [],
             santas: [],
             copied: false,
+            hidden: true,
+            name: "",
             params: this.getSearchParameters()
         };
     }
@@ -64,7 +66,7 @@ class SecretSanta extends Component {
 
     handleAddPersonParent = (name) => {
         name = name.toLowerCase();
-        console.log(name)
+        //console.log(name)
         if (name === "") {
             alert("Please enter a name!");
         }
@@ -78,10 +80,15 @@ class SecretSanta extends Component {
                     santas: []
                 }
             })
+          if(this.state.people.length + 1 > 2) {
+            this.setState({
+              hidden: true
+            })
+          }
         }
     }
 
-    handleDeletePerson = (name) => {        
+    handleDeletePerson = (name) => {
         this.setState((prevState) => {
             return {
                 people: prevState.people.filter(item => item !== name)
@@ -90,9 +97,13 @@ class SecretSanta extends Component {
     }
 
     handleGenerate = () => {
+      if(this.state.people.length <= 2) {
+        this.setState({
+          hidden: false
+        })
+      }
         const newArray = this.state.people.slice(); // copy array
         const santas = this.shuffleArray(newArray);
-
         this.setState(() => {
             return {
                 santas: santas
@@ -100,7 +111,19 @@ class SecretSanta extends Component {
         })
     }
 
+    updateName = (event) => {
+      this.setState({name: event.target.value, hidden: true})
+      console.log(this.state.name)
+    }
+
+
     render() {
+
+      let generateErrorMessage;
+      generateErrorMessage = (
+          <p style={{color: "#d53743", fontSize: ".75rem", textAlign: "center", marginTop: "-.75rem"}}>You need at least 3 people to generate Secret Santas!</p>
+        )
+
         if (this.state.params.name !== undefined) {
             return (
                 <div className="container">
@@ -115,13 +138,20 @@ class SecretSanta extends Component {
             <div className="container wrap">
                 <Header/>
                 <Generate handleGenerate={this.handleGenerate}/>
-                <AddPerson handleAddPersonParent={this.handleAddPersonParent}/>
-                <People people={this.state.people} 
-                    santas={this.state.santas} 
-                    handleDeletePerson={this.handleDeletePerson} 
-                    encryptString={this.encryptString} 
+                {!this.state.hidden ?
+                  generateErrorMessage
+                : null}
+                <AddPerson
+                  handleAddPersonParent={this.handleAddPersonParent}
+                  updateName={this.updateName}
+                  />
+                <People
+                  people={this.state.people}
+                  santas={this.state.santas}
+                  handleDeletePerson={this.handleDeletePerson}
+                  encryptString={this.encryptString}
                 />
-            </div> 
+            </div>
             <div className="container">
                 <Footer/>
             </div>

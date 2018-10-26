@@ -73,6 +73,11 @@ class SecretSanta extends Component {
         else if (this.state.people.indexOf(name) !== -1) { // -1 means in array
             alert("You've already added this person!")
         }
+        else if (this.state.people.length + 1 > 2) {
+            this.setState({
+                hidden: true
+            })
+        }
         else { // if not blank AND not in array already
             this.setState((prevState) => {
                 return {
@@ -80,11 +85,6 @@ class SecretSanta extends Component {
                     santas: []
                 }
             })
-          if(this.state.people.length + 1 > 2) {
-            this.setState({
-              hidden: true
-            })
-          }
         }
     }
 
@@ -97,18 +97,20 @@ class SecretSanta extends Component {
     }
 
     handleGenerate = () => {
-      if(this.state.people.length <= 2) {
+    const newArray = this.state.people.slice(); // copy array
+    const santas = this.shuffleArray(newArray);
+    if (this.state.people.length <= 2) {
         this.setState({
-          hidden: false
+            hidden: false
         })
-      }
-        const newArray = this.state.people.slice(); // copy array
-        const santas = this.shuffleArray(newArray);
+    }
+    else {
         this.setState(() => {
             return {
                 santas: santas
             }
         })
+    }
     }
 
     updateName = (event) => {

@@ -1,3 +1,2 @@
-https://hackernoon.com/using-sass-with-create-react-app-without-ejecting-b5f4f827ed9e
-
-if no names and generate is clicked, show dialogue: "enter some names to get started"
+- if no names and generate is clicked, show dialogue: "enter some names to get started"
+- change the alert() errors to the red text error

@@ -18,6 +18,7 @@ class SecretSanta extends Component {
             santas: [],
             copied: false,
             hidden: true,
+            message: "",
             params: this.getSearchParameters()
         };
     }
@@ -67,10 +68,16 @@ class SecretSanta extends Component {
         name = name.toLowerCase();
         console.log(name)
         if (name === "") {
-            alert("Please enter a name!");
+            this.setState ({
+                hidden: false,
+                message: "Please enter a valid name!"
+            })
         }
         else if (this.state.people.indexOf(name) !== -1) { // -1 means in array
-            alert("You've already added this person!")
+            this.setState ({
+                hidden: false,
+                message: "This person has already been added!"
+            })
         }
         else { // if not blank AND not in array already
             this.setState((prevState) => {
@@ -96,7 +103,8 @@ class SecretSanta extends Component {
         const santas = this.shuffleArray(newArray);
         if (this.state.people.length <= 2) {
             this.setState ({
-              hidden: false
+              hidden: false,
+              message: "You need at least 3 people to generate Secret Santas!"
             })
         }
         else {
@@ -111,7 +119,7 @@ class SecretSanta extends Component {
     render() {
         let generateErrorMessage;
         generateErrorMessage = (
-          <p style={{color: "#d53743", fontSize: ".75rem", textAlign: "center", marginTop: "-.75rem"}}>You need at least 3 people to generate Secret Santas!</p>
+          <p style={{color: "#d53743", fontSize: ".75rem", textAlign: "center", marginTop: "-.75rem"}}>{this.state.message}</p>
         )
 
         if (this.state.params.name !== undefined) {

@@ -110,6 +110,7 @@ class SecretSanta extends Component {
         else {
             this.setState(() => {
                 return {
+                    hidden: true,
                     santas: santas
                 }
             })

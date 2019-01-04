@@ -10,7 +10,9 @@ yarn install
 
 Additionally, you will have to create a key for crypto-js in a environment file, such as an `.env.local` file. The key is called REACT_APP_ENCRYPT_KEY and it needs to be 16 digits of characters or numbers. For example:
 
-`REACT_APP_ENCRYPT_KEY = 123456789abcdefg`
+```
+REACT_APP_ENCRYPT_KEY = 123456789abcdefg
+```
 
 ## Running the App
 

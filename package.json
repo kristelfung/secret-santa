@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "license": "MIT",
   "dependencies": {
-    "crypto-js": "^3.1.9-1",
-    "node-sass": "^4.13.1",
+    "crypto-js": "^4.2.0",
+    "node-sass": "^9.0.0",
     "react": "^16.5.2",
     "react-copy-to-clipboard": "^5.0.1",
     "react-dom": "^16.5.2",
-    "react-scripts": "2.0.4"
+    "react-scripts": "^5.0.1"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "7.21.11"
   },
   "scripts": {
     "start": "react-scripts start",

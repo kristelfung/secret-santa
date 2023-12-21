@@ -60,8 +60,6 @@ class SecretSanta extends Component {
     }
 
     handleAddPersonParent = (name) => {
-        name = name.toLowerCase();
-        console.log(name)
         if (name === "") {
             this.setState ({
                 hidden: false,

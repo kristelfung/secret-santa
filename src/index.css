@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Lato', sans-serif;
+    background-color: theme('colors.zinc.800');
+    color: theme('colors.zinc.50');
+  }
+
+  a {
+    color: theme('colors.sky.300');
+    text-decoration: underline;
+  }
+}

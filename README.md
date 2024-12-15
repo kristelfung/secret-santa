@@ -1,23 +1,23 @@
-# Secret Santa
-A secret santa generator without signup or email, built in React and bootstrapped with [create-react-app](https://github.com/facebook/create-react-app). Live demo available at [https://linksecretsanta.netlify.app/](https://linksecretsanta.netlify.app/).
+# Secret Santa Generator
 
-## Installing
-Clone or download the repository onto your local machine. Navigate to the directory, and run:
+Frontend secret santa generator. Names are shuffled using Sattolo's algorithm. To send secret santa assignments, send the link generated next to the santa's name.
 
-```
-yarn install
-```
+To obfuscating the name, we encrypt the recipient's name in the URL and pass it as a query param. It is then decrypted by the frontend and displayed in the browser.
 
-Additionally, you will have to create a key for crypto-js in a environment file, such as an `.env.local` file. The key is called REACT_APP_ENCRYPT_KEY and it needs to be 16 digits of characters or numbers. For example:
+Technically, the encrypt key should be stored in an environment variable, but for demo purposes I've just hardcoded it as `sample-key` to make it easier to get started.
 
-```
-REACT_APP_ENCRYPT_KEY = 123456789abcdefg
-```
+This project is bootstrapped by [Vite](https://v3.vitejs.dev/guide/).
 
-## Running the App
+## Getting Started
 
-Run the development server like so:
+Clone the repository and install dependencies.
 
 ```
-yarn start
+npm install
+```
+
+To run the dev server, run
+
+```
+npm run dev
 ```

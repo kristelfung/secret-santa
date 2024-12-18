@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { encryptString } from '../utils/encryption'
 import { motion } from 'framer-motion'
 
+const COPY_TIMEOUT = 500
+
 export function ListItem({
   santa,
   index,
@@ -24,7 +26,7 @@ export function ListItem({
     setCopied(true)
     setTimeout(() => {
       setCopied(false)
-    }, 500)
+    }, COPY_TIMEOUT)
   }
 
   return (

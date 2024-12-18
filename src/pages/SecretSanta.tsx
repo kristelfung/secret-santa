@@ -6,6 +6,8 @@ import { List } from '../components/List'
 import { Error } from '../components/Error'
 import { sattoloShuffle } from '../utils/sattolo'
 
+const MIN_PARTICIPANTS = 3
+
 export function SecretSanta() {
   const [people, setPeople] = useState<string[]>([])
   const [assignments, setAssignments] = useState<Record<string, string> | null>(
@@ -14,8 +16,10 @@ export function SecretSanta() {
   const [error, setError] = useState<string | null>(null)
 
   const handleGenerate = (): void => {
-    if (people.length < 3) {
-      setError('You need at least 3 people to generate Secret Santas!')
+    if (people.length < MIN_PARTICIPANTS) {
+      setError(
+        `You need at least ${MIN_PARTICIPANTS} people to generate Secret Santas!`
+      )
       return
     }
     const shuffled = sattoloShuffle(people)

@@ -38,7 +38,7 @@ export function Input({
     const newPeople = [...people, ...newPastedPeople]
 
     const namesSet = new Set()
-    const hasDuplciate = newPeople.some((person) => {
+    const hasDuplicate = newPeople.some((person) => {
       if (namesSet.has(person)) {
         setError(`${person} is already in the list!`)
         setInput('')
@@ -46,7 +46,7 @@ export function Input({
       }
       namesSet.add(person)
     })
-    if (hasDuplciate) return
+    if (hasDuplicate) return
 
     setPeople([...newPeople])
     setAssignments(null)
